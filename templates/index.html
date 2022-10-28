@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link Shortener</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/style.css') }}">
+</head>
+<body>
+
+    <form action="/" method="POST">
+        Link Title<br>
+        <input type="text" name="ProductName"><br><br>
+
+        Long Link<br>
+        <input type="text" name="LongLink"><br><br>
+
+        <button type="submit" name="download" value="Download">Submit</button>
+    </form>
+
+
+    <div class="ShortLinkSection">
+        <p>Product Name : {{ ProductName }}</p>
+        <p>Main Link : {{ ProductLink }}</p>
+        <p>Main Short Link : {{ ShortLink }}</p>
+        <p>Name With Short Link :>  {{ ProductName }} : {{ ShortLink }}</p>
+
+        <br>
+
+        <p>Long Link : {{ LongLink }}</p>
+        <p>Raw Short Link : {{ RawShortLink }}</p>
+        
+        <br>
+        
+        <p>Affiliate Link : {{ AffiliateLink }}</p>
+        <p>Affiliate Short Link :>  {{ ProductName }} : {{ AffiliateShortLink }}</p>
+    </div>
+    
+    
+   
+
+    
+    
+</body>
+</html>
