@@ -8,6 +8,7 @@ shortener = pyshorteners.Shortener()
 
 @app.route('/', methods = ['POST', 'GET'])
 def index():
+
     ProductName = ''
     LongLink = ''
     ShortLink = ''
@@ -15,6 +16,7 @@ def index():
     RawShortLink = ''
     AffiliateLink = ''
     AffiliateShortLink = ''
+    Status = ''
 
     if request.method == 'POST' :
         ProductName = str(request.form.get('ProductName'))
@@ -32,32 +34,25 @@ def index():
 
             AffiliateLink = ProductLink + '?tracking=APvA30dTUiUIbOl0hhFQOnWOXP0R1o4dp6iTLjXbneYGDB5fzzTxREhinCfDIDVV'
 
-            RawShortLink = shortener.tinyurl.short(LongLink)
-            ShortLink = shortener.tinyurl.short(ProductLink)
-            AffiliateShortLink = shortener.tinyurl.short(AffiliateLink)
+            try:
+                RawShortLink = shortener.tinyurl.short(LongLink)
+                ShortLink = shortener.tinyurl.short(ProductLink)
+                AffiliateShortLink = shortener.tinyurl.short(AffiliateLink)
+                Status = 'Success'
+            except:
+                Status = 'Faild'
 
         else:
-            LongLink = 'Enter a valid link'
-            ShortLink = 'Enter a valid link'
-            ProductLink = 'Enter a valid link'
-            RawShortLink = 'Enter a valid link'
-            AffiliateLink = 'Enter a valid link'
-            AffiliateShortLink = 'Enter a valid link'
+            Status = 'Please Enter A Valid Link'
+            LongLink = ''
+            ShortLink = ''
+            ProductLink = ''
+            RawShortLink = ''
+            AffiliateLink = ''
+            AffiliateShortLink = ''
                     
             
-    return render_template('index.html', ProductName = ProductName, LongLink = LongLink, ShortLink = ShortLink, ProductLink = ProductLink, RawShortLink = RawShortLink, AffiliateLink = AffiliateLink, AffiliateShortLink = AffiliateShortLink)
-
-
-
-
-
-
-
-
-
-
-
-
+    return render_template('index.html', ProductName = ProductName, LongLink = LongLink, ShortLink = ShortLink, ProductLink = ProductLink, RawShortLink = RawShortLink, AffiliateLink = AffiliateLink, AffiliateShortLink = AffiliateShortLink, Status = Status)
 
 
 

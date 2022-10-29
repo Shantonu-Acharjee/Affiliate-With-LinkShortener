@@ -9,37 +9,69 @@
 </head>
 <body>
 
-    <form action="/" method="POST">
-        Link Title<br>
-        <input type="text" name="ProductName"><br><br>
-
-        Long Link<br>
-        <input type="text" name="LongLink"><br><br>
-
-        <button type="submit" name="download" value="Download">Submit</button>
-    </form>
-
-
-    <div class="ShortLinkSection">
-        <p>Product Name : {{ ProductName }}</p>
-        <p>Main Link : {{ ProductLink }}</p>
-        <p>Main Short Link : {{ ShortLink }}</p>
-        <p>Name With Short Link :>  {{ ProductName }} : {{ ShortLink }}</p>
-
-        <br>
-
-        <p>Long Link : {{ LongLink }}</p>
-        <p>Raw Short Link : {{ RawShortLink }}</p>
-        
-        <br>
-        
-        <p>Affiliate Link : {{ AffiliateLink }}</p>
-        <p>Affiliate Short Link :>  {{ ProductName }} : {{ AffiliateShortLink }}</p>
-    </div>
     
+    <div class="header"> <!-- Header Start -->
+        <h1>Link Shortener</h1>
+    </div> <!-- Header End -->
     
+
+
+    
+    <div class="MainBox"> <!-- MainBox Start -->
+
+        <form action="/" method="POST">
+           
+            <input type="text" name="ProductName" placeholder="Link Title">
+            <input type="text" name="LongLink" placeholder="Long Link">
+            <button type="submit" name="download" value="Download">Submit</button>
+            <p>Status : {{ Status }}</p>
+        
+        </form>
+
+    </div><!-- Main Box -->
+    
+
+
+
+
+
+
+    
+    <div class="ShortLinkSection"><!-- ShortLink Start -->
+
+        <h2>Your Short Link</h2>
+        <p><span>Name :</span> {{ ProductName }}</p>
+        <p><span>Main Link :</span> {{ ProductLink }}</p>
+        <p><span>Main Short Link :</span> {{ ShortLink }}</p>
+        <p><span>Name With Short Link :></span>  {{ ProductName }} : {{ ShortLink }}</p>
+
+        <br><br>
+
+        <p><span>Long Link :</span> {{ LongLink }}</p>
+        <p><span>Raw Short Link :</span> {{ RawShortLink }}</p>
+        
+        <br><br>
+        
+        <p><span>Affiliate Link :</span> {{ AffiliateLink }}</p>
+        <p><span>Affiliate Short Link :></span>  {{ ProductName }} : {{ AffiliateShortLink }}</p>
+        
+    </div><!-- ShortLink End -->
+    
+
+
+
+
    
 
+
+
+    
+    <footer class="copyright"><!--Copyright Start-->
+        <p>
+            Copyright &copy; 2022 . All rights reserved by <a href="https://shantonuacharjee.blogspot.com">Shantonu Acharjee</a>
+        </p>
+    </footer><!--Copyright End-->
+    
     
     
 </body>

@@ -1,32 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Vollkorn&display=swap');
 
+
 *{
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
+
+
 body{
     background: #75c35d;
 }
 
-.MainBox{
-    background: rgb(255, 255, 255);
-    width: 600px;
-    padding: 40px;
-    overflow: hidden;
-    margin: auto;
-    margin-top: 30px;
-    
-    
-}
 
-.ShortLink{
-    background: rgb(255, 255, 255);
-    width: 600px;
-    padding: 40px;
-    overflow: hidden;
-    margin: auto;
-    margin-top: 40px;
-}
 
 .header h1{
     text-align: center;
@@ -35,16 +21,14 @@ body{
     font-family: 'Lobster', cursive;
 }
 
-.ShortLink h2{
-    text-align: center;
-    font-family: 'Lobster', cursive;
-    color: rgb(11, 61, 61);
-}
 
-.ShortLink p{
-    text-align: center;
-    padding: 5px 0px;
-    font-family: 'Vollkorn', serif;
+.MainBox{
+    background: rgb(255, 255, 255);
+    width: 600px;
+    padding: 40px;
+    overflow: hidden;
+    margin: auto;
+    margin-top: 30px;   
 }
 
 
@@ -84,6 +68,44 @@ body{
     transition: background-color .3s;
     background-color: hotpink;
 }
+
+
+.MainBox p{
+    margin-top: 20px;
+}
+
+
+
+.ShortLinkSection{
+    background: rgb(255, 255, 255);
+    width: 600px;
+    padding: 40px;
+    overflow: scroll;
+    margin: auto;
+    margin-top: 40px;
+}
+
+
+.ShortLinkSection span{
+    font-weight: bold;
+    color: rgba(255, 89, 0, 0.911);
+}
+
+
+.ShortLinkSection h2{
+    text-align: center;
+    font-family: 'Lobster', cursive;
+    color: rgb(11, 61, 61);
+    margin-bottom: 10px;
+}
+
+
+.ShortLinkSection p{
+    padding: 5px 0px;
+    font-family: 'Vollkorn', serif;
+}
+
+
 
 .copyright{
     width: 100%;
