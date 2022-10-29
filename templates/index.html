@@ -1,46 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Link Shortener</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/style.css') }}">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename = 'css/style.css') }}"
+    />
+  </head>
+  <body>
+    <form id="linkInputForm">
+      Link Title<br />
+      <input
+        type="text"
+        name="ProductName"
+        id="productNameInput"
+        value=""
+      /><br /><br />
 
-    <form action="/" method="POST">
-        Link Title<br>
-        <input type="text" name="ProductName"><br><br>
-
-        Long Link<br>
-        <input type="text" name="LongLink"><br><br>
-
-        <button type="submit" name="download" value="Download">Submit</button>
+      Long Link<br />
+      <input
+        type="text"
+        name="LongLink"
+        id="longLinkInput"
+        value=""
+      /><br /><br />
     </form>
-
+    <button id="submitBtn">Submit</button>
 
     <div class="ShortLinkSection">
-        <p>Product Name : {{ ProductName }}</p>
-        <p>Main Link : {{ ProductLink }}</p>
-        <p>Main Short Link : {{ ShortLink }}</p>
-        <p>Name With Short Link :>  {{ ProductName }} : {{ ShortLink }}</p>
+      <p>Product Name : <span id="productName"></span></p>
+      <p>Main Link : <span id="productLink"></span></p>
+      <p>Main Short Link : <span id="shortLink"></span></p>
+      <p>Name With Short Link :> <span id="nameWithShortLink"></span></p>
 
-        <br>
+      <br />
 
-        <p>Long Link : {{ LongLink }}</p>
-        <p>Raw Short Link : {{ RawShortLink }}</p>
-        
-        <br>
-        
-        <p>Affiliate Link : {{ AffiliateLink }}</p>
-        <p>Affiliate Short Link :>  {{ ProductName }} : {{ AffiliateShortLink }}</p>
+      <p>Long Link : <span id="longLink"></span></p>
+      <p>Raw Short Link : <span id="rawShortLink"></span></p>
+
+      <br />
+
+      <p>Affiliate Link : <span id="affiliateLink"></span></p>
+      <p>Affiliate Short Link :> <span id="affiliateShortLink"></span></p>
     </div>
-    
-    
-   
-
-    
-    
-</body>
+    <script src="{{ url_for('static', filename = 'js/main.js') }}"></script>
+  </body>
 </html>
