@@ -10,25 +10,32 @@
       href="{{ url_for('static', filename = 'css/style.css') }}"
     />
   </head>
-  <body>
-    <form id="linkInputForm">
-      Link Title<br />
-      <input
-        type="text"
-        name="ProductName"
-        id="productNameInput"
-        value=""
-      /><br /><br />
 
-      Long Link<br />
-      <input
-        type="text"
-        name="LongLink"
-        id="longLinkInput"
-        value=""
-      /><br /><br />
-    </form>
-    <button id="submitBtn">Submit</button>
+  <body><!-- Body Start -->
+
+    <div class="header"> <!-- Header Start -->
+      <h1>Link Shortener</h1>
+    </div> <!-- Header End -->
+
+
+
+
+    <div class="MainBox"> <!-- MainBox Start -->
+
+      <form id="linkInputForm">
+
+        <input type="text" name="ProductName" id="productNameInput"value="" placeholder="Link Title"/>
+        <input type="text" name="LongLink" id="longLinkInput" value="" placeholder="Long Link"/>
+
+      </form>
+      
+      <button id="submitBtn">Submit</button>
+
+    </div><!-- Main Box -->
+
+
+
+
 
     <div class="ShortLinkSection">
       <p>Product Name : <span id="productName"></span></p>
@@ -46,6 +53,10 @@
       <p>Affiliate Link : <span id="affiliateLink"></span></p>
       <p>Affiliate Short Link :> <span id="affiliateShortLink"></span></p>
     </div>
+
+
+
+
     <script src="{{ url_for('static', filename = 'js/main.js') }}"></script>
-  </body>
+  </body><!-- Body End-->
 </html>
